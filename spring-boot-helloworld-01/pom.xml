@@ -16,4 +16,38 @@
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
+    <dependencies>
+        <!-- 引入 Web 场景开发的启动器，包含：spring-web、spring-webmvc、tomcat starter、json starter -->
+        <!-- 这些场景的 starter 将该场景下所需要的依赖包全部引入了，且对于模板样式的代码做了自动配置 -->
+        <!-- SpringBoot 官方提供的 starter 命名规范是 spring-boot-starter-XXX，第三方组织提供的
+        命名规范是 XXX-spring-boot-starter，SpringBoot 默认使用的日志组件是 slf4j + Logback，默认使用的
+        序列化组件是 jackson，默认使用的 redis 客户端是 jedis
+         -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- 引入测试的场景启动器，包含：junit、hamcrest、mockito -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+        <!-- 引入 SpringBoot 的开发者工具，可以热部署应用，而无需重启，需要配合构建一起使用，修改代码后点击 IDEA 中间
+        的锤子图片进行项目构建。
+         -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional> <!-- 该依赖是可选的，并且不会向上传递 -->
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
