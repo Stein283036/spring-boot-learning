@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>根据书名和类型搜索到的书</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>编号</th>
+        <th>类型</th>
+        <th>书名</th>
+        <th>描述</th>
+    </tr>
+    <tr th:each="book: ${books}">
+        <td th:text="${book.id}"></td>
+        <td th:text="${book.type}"></td>
+        <td th:text="${book.name}"></td>
+        <td th:text="${book.description}"></td>
+    </tr>
+</table>
+</body>
+</html>

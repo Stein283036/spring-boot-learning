@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>图书管理首页</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>编号</th>
+        <th>类型</th>
+        <th>书名</th>
+        <th>描述</th>
+    </tr>
+    <tr th:each="book: ${books}">
+        <!--/*@thymesVar id="book" type="com.guhe.web.pojo.Book"*/-->
+        <td th:text="${book.id}"></td>
+        <td th:text="${book.type}"></td>
+        <td th:text="${book.name}"></td>
+        <td th:text="${book.description}"></td>
+    </tr>
+</table>
+<form method="post" action="/books">
+    请输入你想查询的书名：<input type="text" name="name">
+    请输入你想查询的类型：<input type="text" name="type">
+    <input type="submit">
+</form>
+</body>
+</html>
