@@ -11,6 +11,7 @@
     <modules>
         <module>spring-boot-helloworld-01</module>
         <module>spring-boot-web-02</module>
+        <module>spring-boot-redis-03</module>
     </modules>
 
     <properties>
