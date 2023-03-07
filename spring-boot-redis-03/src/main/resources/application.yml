@@ -14,11 +14,11 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: stein
     password: njl283036
-    jpa:
-      properties:
-        hibernate:
-          format_sql: true
-          dialect: org.hibernate.dialect.MySQLDialect
-      show-sql: true
-    thymeleaf:
-      cache: false
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+  thymeleaf:
+    cache: false

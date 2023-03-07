@@ -12,6 +12,10 @@
         <module>spring-boot-helloworld-01</module>
         <module>spring-boot-web-02</module>
         <module>spring-boot-redis-03</module>
+        <module>spring-boot-swagger-04</module>
+        <module>spring-boot-knife4j-05</module>
+        <module>spring-boot-validator-06</module>
+        <module>spring-boot-druid-07</module>
     </modules>
 
     <properties>

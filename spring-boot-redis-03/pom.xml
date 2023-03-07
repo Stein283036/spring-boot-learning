@@ -20,6 +20,7 @@
         <!-- Starter for using Redis key-value data store with Spring Data Redis and the Lettuce client -->
         <!-- Lettuce 是一个可伸缩线程安全的 Redis 客户端。多个线程可以共享同一个 RedisConnection。
         它利用优秀 netty NIO 框架来高效地管理多个连接。
+        在 1.x 版本中采用 jedis 作为连接池，而在 2.x 版本中采用了 Lettuce 作为连接池。
         -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

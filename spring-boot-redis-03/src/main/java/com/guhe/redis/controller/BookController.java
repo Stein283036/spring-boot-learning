@@ -3,6 +3,7 @@ package com.guhe.redis.controller;
 import com.guhe.redis.pojo.Book;
 import com.guhe.redis.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -24,11 +25,18 @@ public class BookController {
 	@Autowired
 	private RedisTemplate<String, Book> redisTemplate1;
 
+	/**
+	 * 缓存管理器
+	 */
+	@Autowired
+	private CacheManager cacheManager;
+
 	@Autowired
 	private BookRepository bookRepository;
 
-	@GetMapping("/")
-	@Cacheable(value = "books", key = "cachedBooks", unless = "#books != null") // 将方法的返回值进行缓存
+	@GetMapping
+	// value 指定缓存所属的组，key 指定缓存的键，unless 用来设置在什么条件下不进行缓存，condition 指定满足什么条件进行缓存
+	@Cacheable(value = "books", key = "'cachedBooks'", unless = "#result == null ") // 将方法的返回值进行缓存
 	public List<Book> queryAllBooks() {
 //		List<Book> cachedBooks = redisTemplate2.opsForValue().get("cachedBooks");
 //		if (cachedBooks != null) {
@@ -40,18 +48,21 @@ public class BookController {
 	}
 
 	@GetMapping("/{id}")
+	@Cacheable(value = "books", key = "'book_' + #id", condition = "#id != null", unless = "#result == null")
 	public Book queryBookById(@PathVariable("id") Long id) {
-		Book cachedBookWithId = redisTemplate1.opsForValue().get("book_" + id);
-		if (cachedBookWithId != null) {
-			return cachedBookWithId;
-		}
+//		Book cachedBookWithId = redisTemplate1.opsForValue().get("book_" + id);
+//		if (cachedBookWithId != null) {
+//			return cachedBookWithId;
+//		}
 		Book book = bookRepository.findBookById(id);
-		redisTemplate1.opsForValue().set("book_" + id, book);
+		// 以编程式的方式使用缓存
+//		redisTemplate1.opsForValue().set("book_" + id, book);
 		return book;
 	}
 
 	@DeleteMapping("/{id}")
-	@CacheEvict(value = "book_#{id}")
+	// 通过指定 allEntries 为 true，删除该缓存组下面的所有缓存
+	@CacheEvict(value = "books", key = "'book_' + #id", allEntries = true)
 	public Book removeBookById(@PathVariable("id") Long id) {
 		Book book = queryBookById(id);
 		bookRepository.deleteById(id);

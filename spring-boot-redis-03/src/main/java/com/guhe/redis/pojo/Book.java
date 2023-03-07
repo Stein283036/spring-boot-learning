@@ -7,6 +7,7 @@ import lombok.ToString;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -19,7 +20,7 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @Entity
 @Table(name = "tb_book") // 当 JPA 的实体类与 table 名称不一致时，需要使用这个注解显示地指明对应的表
-public class Book {
+public class Book implements Serializable {
 	public static final long serialVersionUID = 1L;
 
 	@Id
