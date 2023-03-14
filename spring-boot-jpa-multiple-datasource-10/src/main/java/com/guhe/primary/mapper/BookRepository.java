@@ -1,4 +1,4 @@
-package com.guhe.primary.repository;
+package com.guhe.primary.mapper;
 
 import com.guhe.primary.pojo.Book;
 import org.springframework.data.jpa.repository.JpaRepository;

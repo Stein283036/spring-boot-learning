@@ -1,13 +1,12 @@
-package com.guhe.controller;
+package com.guhe.mybatis.controller;
 
-import com.guhe.primary.pojo.Book;
-import com.guhe.primary.mapper.BookRepository;
+import com.guhe.mybatis.primary.mapper.BookMapper;
+import com.guhe.mybatis.primary.pojo.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 /**
  * @author njl
@@ -17,10 +16,10 @@ import java.util.List;
 @RestController
 public class BookController {
 	@Autowired
-	private BookRepository bookRepository;
+	private BookMapper bookMapper;
 
-	@GetMapping
-	public List<Book> queryAll() {
-		return bookRepository.findAll();
+	@GetMapping("/{id}")
+	public Book findById(@PathVariable("id") Long id) {
+		return bookMapper.selectById(id);
 	}
 }

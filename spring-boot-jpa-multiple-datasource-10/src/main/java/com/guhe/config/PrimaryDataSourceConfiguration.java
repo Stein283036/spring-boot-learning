@@ -29,7 +29,7 @@ import java.util.Objects;
 @EnableJpaRepositories(
 		entityManagerFactoryRef = "entityManagerFactoryPrimary",
 		transactionManagerRef = "transactionManagerPrimary",
-		basePackages = "com.guhe.primary.repository"
+		basePackages = "com.guhe.primary.mapper"
 )
 public class PrimaryDataSourceConfiguration {
 	@Autowired

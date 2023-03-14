@@ -1,4 +1,4 @@
-package com.guhe.secondary.repository;
+package com.guhe.secondary.mapper;
 
 import com.guhe.secondary.pojo.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;

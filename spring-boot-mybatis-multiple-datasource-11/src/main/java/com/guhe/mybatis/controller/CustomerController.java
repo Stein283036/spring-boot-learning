@@ -1,13 +1,12 @@
-package com.guhe.controller;
+package com.guhe.mybatis.controller;
 
-import com.guhe.secondary.pojo.Customer;
-import com.guhe.secondary.mapper.CustomerRepository;
+import com.guhe.mybatis.secondary.mapper.CustomerMapper;
+import com.guhe.mybatis.secondary.pojo.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 /**
  * @author njl
@@ -17,10 +16,10 @@ import java.util.List;
 @RestController
 public class CustomerController {
 	@Autowired
-	private CustomerRepository customerRepository;
+	private CustomerMapper customerMapper;
 
-	@GetMapping
-	public List<Customer> queryAll() {
-		return customerRepository.findAll();
+	@GetMapping("/{id}")
+	public Customer findById(@PathVariable("id") Long id) {
+		return customerMapper.selectById(id);
 	}
 }

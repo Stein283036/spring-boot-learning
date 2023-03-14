@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- mapperspace 的 namespace 名称空间必须和 Mapper 接口的全限定名一致 -->
+<mapper namespace="com.guhe.mybatis.secondary.mapper.CustomerMapper">
+
+    <!-- Customer selectById(@Param("id") Long id); -->
+    <select id="selectById" resultType="com.guhe.mybatis.secondary.pojo.Customer">
+        select *
+        from tb_customer
+        <where>
+            <if test="id != null">
+                id = #{id}
+            </if>
+        </where>
+    </select>
+</mapper>

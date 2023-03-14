@@ -27,7 +27,7 @@ import java.util.Objects;
 @EnableJpaRepositories(
 		entityManagerFactoryRef = "entityManagerFactorySecondary",
 		transactionManagerRef = "transactionManagerSecondary",
-		basePackages = "com.guhe.secondary.repository"
+		basePackages = "com.guhe.secondary.mapper"
 )
 public class SecondaryDataSourceConfiguration {
 	@Autowired

@@ -1,4 +1,4 @@
-package com.guhe.config;
+package com.guhe.mybatis.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
