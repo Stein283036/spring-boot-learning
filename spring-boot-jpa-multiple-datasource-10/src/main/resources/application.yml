@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    primary:
+      jdbc-url: jdbc:mysql:///springboot?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: stein
+      password: njl283036
+    secondary:
+      jdbc-url: jdbc:mysql:///ssm?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: stein
+      password: njl283036
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
