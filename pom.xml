@@ -19,6 +19,7 @@
         <module>spring-boot-data-jpa-08</module>
         <module>spring-boot-mybatis-09</module>
         <module>spring-boot-jpa-multiple-datasource-10</module>
+        <module>spring-boot-mybatis-multiple-datasource-11</module>
     </modules>
 
     <properties>

@@ -8,6 +8,7 @@ import lombok.ToString;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.time.LocalDate;
 
 /**
@@ -19,6 +20,7 @@ import java.time.LocalDate;
 @ToString
 @RequiredArgsConstructor
 @Entity
+@Table(name = "tb_customer")
 public class Customer {
 	@Id
 	@GeneratedValue
