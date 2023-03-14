@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: stein
+    password: njl283036
+    url: jdbc:mysql:///springboot?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
+
+  flyway:
+    enabled: true
+    schemas: springboot
