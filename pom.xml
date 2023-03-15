@@ -21,6 +21,7 @@
         <module>spring-boot-jpa-multiple-datasource-10</module>
         <module>spring-boot-mybatis-multiple-datasource-11</module>
         <module>spring-boot-flyway-12</module>
+        <module>spring-boot-redis-pub-sub-13</module>
     </modules>
 
     <properties>
