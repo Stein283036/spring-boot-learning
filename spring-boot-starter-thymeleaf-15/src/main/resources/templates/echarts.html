@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用 echarts 绘制可视化图表</title>
+<!--    <script src="../static/echarts.js"></script>-->
+    <script src="https://cdn.bootcss.com/echarts/4.6.0/echarts.min.js"></script>
+</head>
+<body>
+<!-- 为 ECharts 准备一个定义了宽高的 DOM -->
+<div id="main" style="width: 600px;height:400px;"></div>
+</body>
+<script>
+    // 基于准备好的dom，初始化echarts实例
+    const myChart = echarts.init(document.getElementById("main"));
+
+    // 指定图表的配置项和数据
+    const option = {
+        title: {
+            text: 'ECharts 入门示例'
+        },
+        tooltip: {},
+        legend: {
+            data: ['销售量']
+        },
+        xAxis: {
+            data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+        },
+        yAxis: {
+
+        },
+        series: [
+            {
+                name: '销售量',
+                type: 'bar',
+                data: [100, 7, 26, 36, 47, 40]
+            }
+        ]
+    };
+
+    myChart.setOption(option)
+</script>
+</html>
