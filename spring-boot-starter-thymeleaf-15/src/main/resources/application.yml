@@ -5,3 +5,14 @@ spring:
     mode: HTML
     suffix: .html
     encoding: UTF-8
+  servlet:
+    multipart:
+      # 单个上传文件的最大大小，如果上传文件大小超过 10 MB，必须配置，否则上传失败。
+      # 默认是 private DataSize maxFileSize = DataSize.ofMegabytes(1); 1 MB
+      max-file-size: 50MB
+      # 最大的请求大小
+      # 默认是 private DataSize maxFileSize = DataSize.ofMegabytes(10); 10 MB
+      max-request-size: 500MB
+common:
+  file:
+    upload: D:\BaiduNetdiskDownload\

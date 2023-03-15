@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多文件上传</title>
+</head>
+<body>
+<form method="post" action="/files/multiple/upload" enctype="multipart/form-data">
+    <fieldset>
+        <label for="file1">上传第一章图片：</label>
+        <input type="file" name="files" id="file1">
+    </fieldset>
+    <fieldset>
+        <label for="file2">上传第二章图片：</label>
+        <input type="file" name="files" id="file2">
+    </fieldset>
+    <fieldset>
+        <label for="file3">上传第三章图片：</label>
+        <input type="file" name="files" id="file3">
+    </fieldset>
+    <fieldset>
+        <input type="submit" value="上传">
+    </fieldset>
+</form>
+</body>
+</html>

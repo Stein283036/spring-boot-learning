@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "common.file.upload",
+      "type": "java.lang.String",
+      "description": "Description for common.file.upload."
+  }
+] }
