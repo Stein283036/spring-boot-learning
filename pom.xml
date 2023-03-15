@@ -25,6 +25,7 @@
         <module>spring-boot-starter-mongodb-14</module>
         <module>spring-boot-starter-thymeleaf-15</module>
         <module>spring-boot-scheduled-16</module>
+        <module>spring-boot-elasticjob-lite-17</module>
     </modules>
 
     <properties>

@@ -1,0 +1,9 @@
+elasticjob:
+  reg-center:
+    server-lists: localhost:2181
+    namespace: namespace
+  jobs:
+    my-simple-job:
+      elastic-job-class: com.guhe.elasticjob.MySimpleJob
+      cron: 0/5 * * * * ?
+      sharding-total-count: 1
