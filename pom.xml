@@ -22,6 +22,8 @@
         <module>spring-boot-mybatis-multiple-datasource-11</module>
         <module>spring-boot-flyway-12</module>
         <module>spring-boot-redis-pub-sub-13</module>
+        <module>spring-boot-starter-mongodb-14</module>
+        <module>spring-boot-starter-thymeleaf-15</module>
     </modules>
 
     <properties>
