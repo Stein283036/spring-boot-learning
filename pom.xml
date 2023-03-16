@@ -26,6 +26,7 @@
         <module>spring-boot-starter-thymeleaf-15</module>
         <module>spring-boot-scheduled-16</module>
         <module>spring-boot-elasticjob-lite-17</module>
+        <module>spring-boot-async-18</module>
     </modules>
 
     <properties>

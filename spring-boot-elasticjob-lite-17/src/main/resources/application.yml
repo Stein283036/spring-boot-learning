@@ -1,6 +1,6 @@
 elasticjob:
   reg-center:
-    server-lists: localhost:2181
+    server-lists: 47.98.136.246:2181
     namespace: namespace
   jobs:
     my-simple-job:
