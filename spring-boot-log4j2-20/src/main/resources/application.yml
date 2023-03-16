@@ -1,0 +1,3 @@
+logging:
+  # Location of the logging configuration file. For instance, `classpath:logback.xml` for Logback.
+  config: classpath:log4j2-spring.xml
