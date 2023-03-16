@@ -19,6 +19,16 @@ class AsyncTaskManagerTest {
 	private AsyncTaskManager asyncTaskManager;
 
 	@Test
+	void testRejectionPolicy() throws InterruptedException {
+		CompletableFuture<Long> task4 = asyncTaskManager.task4();
+		CompletableFuture<Long> task5 = asyncTaskManager.task5();
+		CompletableFuture<Long> task42 = asyncTaskManager.task4();
+		CompletableFuture<Long> task52 = asyncTaskManager.task5();
+		CompletableFuture<Long> task53 = asyncTaskManager.task5();
+		CompletableFuture.allOf(task4, task5, task42, task52, task53);
+	}
+
+	@Test
 	void testAsyncTasks() throws InterruptedException, ExecutionException {
 		CompletableFuture<Long> task1 = asyncTaskManager.task1();
 		CompletableFuture<Long> task2 = asyncTaskManager.task2();

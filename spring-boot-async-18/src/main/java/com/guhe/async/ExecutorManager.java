@@ -35,7 +35,15 @@ public class ExecutorManager { // 配置多个线程池，隔离异步的线程�
 		executor.setQueueCapacity(2);
 		executor.setKeepAliveSeconds(60);
 		executor.setThreadNamePrefix("executorForTask4To5-");
-		// A handler for rejected tasks that throws a RejectedExecutionException.
+
+		// CallerRunsPolicy - A handler for rejected tasks that runs the rejected task directly in the
+		// calling thread of the execute method, unless the executor has been shut down,
+		// in which case the task is discarded.
+
+		// RejectedExecutionHandler - A handler for rejected tasks that silently discards the rejected task.
+
+		// 默认的拒绝策略就是 AbortPolicy
+		// AbortPolicy - A handler for rejected tasks that throws a RejectedExecutionException.
 		executor.setRejectedExecutionHandler(new ThreadPoolExecutor.AbortPolicy());
 		return executor;
 	}
