@@ -1,0 +1,27 @@
+logging:
+  pattern:
+    # Appender pattern for output to a file. Supported only with the default Logback setup.
+    file:
+    # Appender pattern for output to the console. Supported only with the default Logback setup.
+    console:
+  file:
+    name: logback.log
+    path: ./
+  logback:
+    rollingpolicy:
+      # Whether to clean the archive log files on startup.
+      clean-history-on-start: true
+      # Pattern for rolled-over log file names.
+      file-name-pattern: ${LOG_FILE}.%d{yyyy-MM-dd}.%i.gz
+      # Maximum log file size. Default 10MB
+      max-file-size: 10MB
+      # Maximum number of archive log files to keep. Default 7 单位 DataSize
+      max-history: 7
+      # Total size of log backups to be kept. Default 0B 单位 DataSize
+      total-size-cap: 0B
+  # Log levels severity mapping. For instance, `logging.level.org.springframework=DEBUG`.
+  # level 的值可以是 trace debug info warn error fatal off
+  level:
+    # * 应用程序下所有的包类
+    com.guhe.logback: debug
+    root: warn

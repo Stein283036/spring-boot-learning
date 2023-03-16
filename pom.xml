@@ -27,6 +27,8 @@
         <module>spring-boot-scheduled-16</module>
         <module>spring-boot-elasticjob-lite-17</module>
         <module>spring-boot-async-18</module>
+        <module>spring-boot-logback-19</module>
+        <module>spring-boot-log4j2-20</module>
     </modules>
 
     <properties>
