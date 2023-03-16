@@ -29,6 +29,7 @@
         <module>spring-boot-async-18</module>
         <module>spring-boot-logback-19</module>
         <module>spring-boot-log4j2-20</module>
+        <module>spring-boot-email-21</module>
     </modules>
 
     <properties>

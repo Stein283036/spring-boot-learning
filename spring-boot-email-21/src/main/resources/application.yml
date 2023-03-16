@@ -1,0 +1,30 @@
+spring:
+  mail:
+    # Default MimeMessage encoding. Default StandardCharsets.UTF_8
+    default-encoding: UTF-8
+    # SMTP server host. For instance, 'smtp.example.com'.
+    host: smtp.qq.com
+    # Login user of the SMTP server.
+    username: 597061520@qq.com
+    # Login password of the SMTP server.
+    password: brticywhogegbbhd
+    # SMTP server port.
+    port: 465
+    # Protocol used by the SMTP server.
+    protocol: smtp
+    # Whether to test that the mail server is available on startup.
+    test-connection: true
+    # Session JNDI name. When set, takes precedence over other Session settings.
+    # jndi-name:
+    properties:
+      mail:
+        transport:
+          protocol: smtp
+        smtp:
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+          port: ${spring.mail.port}
+          auth: true
+          starttls:
+            enable: true
+            required: true
